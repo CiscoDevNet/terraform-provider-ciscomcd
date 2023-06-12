@@ -16,7 +16,7 @@ resource "ciscomcd_policy_rule_set" "ingress_policy_standalone" {
 resource "ciscomcd_policy_rule_set" "ingress_policy_group" {
   name               = "ingress_rule_set_group"
   type               = "GROUP"
-  child_rule_set_ids = [
+  group_member_ids = [
     ciscomcd_policy_rule_set.ingress_policy1.id,
     ciscomcd_policy_rule_set.ingress_policy3.id,
     ciscomcd_policy_rule_set.ingress_policy2.id
