@@ -1,5 +1,5 @@
 # ciscomcd_alert_profile
-Resource for creating and managing an Alert Profile that defines the 3rd-party SIEM (Pagerduty, Slack, ServiceNow) and configuration required to send Multicloud Defense Alerts.  The Alert Profile is used in an Alert Rule.
+Resource for creating and managing an Alert Profile that defines the configuration required for sending Alerts to 3rd-party SIEMs (Pagerduty, Slack, ServiceNow, Slack, Datadog, MS Sentinel, Webex).  The Alert Profile is used in an Alert Rule.
 
 ## Example Usage
 
@@ -36,19 +36,28 @@ resource "ciscomcd_alert_profile" "slack" {
 resource "ciscomcd_alert_profile" "datadog" {
   name            = "datadog"
   type            = "DataDog"
-  integration_url = "https://http-intake.logs.datadoghq.com/"
   integration_key = "<auth token>"
 }
 ```
 
 ### Microsoft Sentinel
 ```hcl
-resource "ciscomcd_alert_profile" "mssentinel1" {
-  name                       = "mssentinel1"
+resource "ciscomcd_alert_profile" "mssentinel" {
+  name                       = "mssentinel"
   type                       = "MicrosoftSentinel"
   log_analytics_log_type     = "mssentinel-ciscomcd-alerting"
   log_analytics_workspace_id = "bbb7ee6f-6cd4-43e4-a2ab-e32fb70e401f"
   integration_key            = "<shared-key/primary-key>"
+}
+```
+
+### Webex
+```hcl
+resource "ciscomcd_alert_profile" "webex" {
+  name            = "webex"
+  description     = "Webex"
+  type            = "WebexWebHook"
+  integration_url = "https://webexapis.com/v1/webhooks/incoming/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svYjc5NTQ0NzMtMWQ2ZC00Y2I0LTk1ZWMtYzFlNTA0NGZlNTE2"
 }
 ```
 
@@ -57,7 +66,7 @@ resource "ciscomcd_alert_profile" "mssentinel1" {
 ### Common Arguments
 * `name` - (Required) Name of the Alert Profile
 * `description` - Description of the Alert Profile
-* `type` - (Required) One of `PagerDutyEventApi`, `ServiceNowWebHook`, `SlackWebHook`, `DataDog`, `MicrosoftSentinel`
+* `type` - (Required) One of `PagerDutyEventApi`, `ServiceNowWebHook`, `SlackWebHook`, `DataDog`, `MicrosoftSentinel`, `WebexWebHook`
 
 ### Destination-specific Arguments
 
@@ -66,19 +75,21 @@ resource "ciscomcd_alert_profile" "mssentinel1" {
 
 ### ServiceNow
 * `integration_url` - (Required) HTTPS endpoint URL
-* `integration_key` - (Required) HTTPS auth token
+* `integration_key` - (Required) Shared key / primary key used to authenticate with ServiceNow
 
 ### Slack
-* `integration_key` - (Required) Shared key / primary key used to authenticate with Slack
+* `integration_url` - (Required) HTTPS endpoint URL
 
 ### Datadog
-* `integration_url` - (Required) HTTPS endpoint URL
-* `integration_key` - (Required) HTTPS auth token
+* `integration_key` - (Required) Shared key / primary key used to authenticate with Datadog
 
 ### Microsoft Sentinel
 * `log_analytics_log_type` - (Required) Name of the MS Sentinel table used to store the alerts 
 * `log_analytics_workspace_id ` - (Required) ID of the MS Sentinel workspace
 * `integration_key` - (Required) Shared key / primary key used to authenticate with MS Sentinel
+
+### Webex
+* `integration_url` - (Required) HTTPS endpoint URL
 
 ## Attribute Reference
 * `id` - ID of the Alert Profile resource that can be referenced in other resources (e.g., *ciscomcd_alert_rule*)
