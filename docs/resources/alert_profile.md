@@ -76,14 +76,14 @@ resource "ciscomcd_alert_profile" "webex" {
 
 ### ServiceNow
 * `integration_url` - (Required) HTTPS endpoint URL
-* `integration_key` - (Required) HTTPS auth token
+* `integration_key` - (Required) Shared key / primary key used to authenticate with ServiceNow
 
 ### Slack
-* `integration_key` - (Required) Shared key / primary key used to authenticate with Slack
+* `integration_url` - (Required) HTTPS endpoint URL
 
 ### Datadog
 * `integration_url` - (Required) HTTPS endpoint URL
-* `integration_key` - (Required) HTTPS auth token
+* `integration_key` - (Required) Shared key / primary key used to authenticate with Datadog
 
 ### Microsoft Sentinel
 * `log_analytics_log_type` - (Required) Name of the MS Sentinel table used to store the alerts 
@@ -91,7 +91,7 @@ resource "ciscomcd_alert_profile" "webex" {
 * `integration_key` - (Required) Shared key / primary key used to authenticate with MS Sentinel
 
 ### Webex
-* `integration_key` - (Required) Shared key / primary key used to authenticate with Webex
+* `integration_url` - (Required) HTTPS endpoint URL
 
 ## Attribute Reference
 * `id` - ID of the Alert Profile resource that can be referenced in other resources (e.g., *ciscomcd_alert_rule*)
