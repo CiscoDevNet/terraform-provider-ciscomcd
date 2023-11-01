@@ -1,9 +1,9 @@
-# DataSource: ciscomcd_log_forwarding_profile
-Data source for obtaining attributes of a Log Forwarding Profile resource.  The attributes can be used in the arguments of a Gateway resource.
+# DataSource: ciscomcd_gatewy_metrics_forwarding_profile
+Data source for obtaining attributes of a Gateway Metrics Forwarding Profile resource.  The attributes can be used in the arguments of a Gateway resource.
 
 ## Example Usage
 ```hcl
-data "ciscomcd_profile_log_forwarding" "datadog" {
+data "ciscomcd_profile_gateway_metrics_forwarding" "datadog" {
   name = "datadog"
 }
 
@@ -21,13 +21,13 @@ resource "ciscomcd_gateway" "aws_hub_gw1" {
   aws_iam_role_firewall = "iam_role_name_for_firewall"
   region                = "us-east-1"
   vpc_id                = ciscomcd_service_vpc.service_vpc.id
-  log_profile           = data.ciscomcd_profile_log_forwarding.datadog.id
+  metrics_profile       = data.ciscomcd_profile_gateway_metrics_forwarding.datadog.id
   aws_gateway_lb        = true
 }
 ```
 
 ## Argument Reference
-* `name` - (Required) Name of the Log Forwarding Profile resource
+* `name` - (Required) Name of the Gateway Metrics Forwarding Profile resource
 
 ## Attributes Reference
-* `id` - ID of the Log Forwarding Profile resource
+* `id` - ID of the Gateway Metrics Forwarding Profile resource

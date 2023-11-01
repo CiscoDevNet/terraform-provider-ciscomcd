@@ -27,16 +27,16 @@ To create Multicloud Defense resources using the Provider you need to authentica
 ```hcl
 terraform {
   required_providers {
-    valtix = {
-      source = "valtix-security/valtix"
-      # version = "22.12.1"
+    ciscomcd = {
+      source = "CiscoDevNet/terraform-provider-ciscomcd"
+      version = "0.2.3"
     }
   }
 }
 
-provider "valtix" {
-  api_key_file = file(var.valtix_api_key_file)
+provider "ciscomcd" {
+  api_key_file = file(var.ciscomcd_api_key_file)
 }
 ```
 
-Contact Multicloud Defense at support@valtix.com for information Multicloud Defense Tenant assigned to you.
+Contact Cisco Support at tac@cisco.com for information on the Multicloud Defense Tenant assigned to you.  Or visit the [Cisco Worldwide Support Contacts](https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html) page for additional ways to contact Cisco Support.
