@@ -1,4 +1,4 @@
-# DataSource: ciscomcd_log_forwarding_profile
+# DataSource: ciscomcd_profile_log_forwarding
 Data source for obtaining attributes of a Log Forwarding Profile resource.  The attributes can be used in the arguments of a Gateway resource.
 
 ## Example Usage
