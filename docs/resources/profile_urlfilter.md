@@ -184,7 +184,6 @@ Please check the Multicloud Defense UI (Manage -> Profiles -> URL Filtering) to 
 
 ## Attribute Reference
 * `id` - ID of the URL Filter Profile resource that can be referenced in other resources (e.g., *ciscomcd_policy_rules*)
-* `profile_id` - (Deprecated) Same as the `id` attribute
 
 ## Import
 URL Filter (URL) Profile resources can be imported using the resource `id`:

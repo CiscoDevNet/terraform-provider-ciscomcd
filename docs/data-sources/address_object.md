@@ -30,4 +30,3 @@ resource "ciscomcd_policy_rules" "ingress_policy_rules" {
 
 ## Attributes Reference
 * `id` - ID of the Address Object resource
-* `address_id` - (Deprecated) Same as the `id` attribute

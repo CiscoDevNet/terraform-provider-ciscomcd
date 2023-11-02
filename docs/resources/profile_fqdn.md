@@ -276,7 +276,6 @@ Please check the Multicloud Defense UI (Manage -> Profiles -> FQDN Filtering) to
 
 ## Attribute Reference
 * `id` - ID of the FQDN Profile resource that can be referenced in other resources (e.g., *ciscomcd_policy_rules*)
-* `profile_id` - (Deprecated) Same as the `id` attribute
 
 ## Import
 FQDN Profile resources can be imported using the resource `id`:
