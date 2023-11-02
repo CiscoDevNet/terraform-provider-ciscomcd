@@ -28,8 +28,8 @@ To create Multicloud Defense resources using the Provider you need to authentica
 terraform {
   required_providers {
     ciscomcd = {
-      source = "CiscoDevNet/terraform-provider-ciscomcd"
-      version = "0.2.3"
+      source = "CiscoDevNet/ciscomcd"
+      version = "0.2.4"
     }
   }
 }
