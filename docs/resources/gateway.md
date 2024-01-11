@@ -184,17 +184,17 @@ For HUB mode INGRESS Gateway set the `security_type = INGRESS`
 
 ### OCI Gateway (INGRESS Gateway in EDGE Mode)
 ```hcl
-resource "valtix_gateway" "oci_gw1" {
+resource "ciscomcd_gateway" "oci_gw1" {
   name                      = "oci-gw1"
   description               = "OCI Ingress Gateway 1"
-  csp_account_name          = valtix_cloud_account.oci_act.name
+  csp_account_name          = ciscomcd_cloud_account.oci_act.name
   instance_type             = "OCI_E3_FLEX"
   gateway_image             = var.gateway_image
   gateway_state             = "ACTIVE"
   mode                      = "EDGE"
   security_type             = "INGRESS"
 	ssh_public_key            = file(var.ssh_public_key_file)
-  policy_rule_set_id        = valtix_policy_rule_set.ingress_policy_rule_set.id
+  policy_rule_set_id        = ciscomcd_policy_rule_set.ingress_policy_rule_set.id
 	region                    = "us-sanjose-1"
 	vpc_id                    = "ocid1.vcn.oc1.us-sanjose-1.amaaaaaa725octaa5u3m3po74swbme7p274xpqw43af6u5vjogpmpeugzezq"
   mgmt_security_group       = "ocid1.networksecuritygroup.oc1.us-sanjose-1.aaaaaaaa2m3q2h3yfaawze4tdtyc5frwoi4kpsbppbq7lyee4jprimxvuvmq"
