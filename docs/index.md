@@ -29,7 +29,7 @@ terraform {
   required_providers {
     ciscomcd = {
       source = "CiscoDevNet/ciscomcd"
-      version = "0.2.4"
+      version = "0.2.5"
     }
   }
 }
