@@ -498,7 +498,7 @@ tags = {
 * `id` - ID of the Gateway resource
 * `gateway_gwlb_endpoints` - (AWS, Azure) For AWS, this attribute includes the Gateway Load Balancer (GWLB) endpoints created in each of the AZs displayed in the format as follows:
 
-    ```hcl
+    ```json
     "gateway_gwlb_endpoints": [
       {
         "availability_zone": "us-east-1a",
@@ -516,7 +516,7 @@ tags = {
     ```
     For Azure, this is represented as a single entry list of a map, where the map contains the attributes of the endpoint.  An example format is shown as follows:
 
-    ```hcl
+    ```json
     "gateway_gwlb_endpoints": [
       {
         "endpoint_id": "/subscriptions/8b29c730-36f9-4f5c-86e4-96129569d6a0/resourceGroups/hardik-eastus-resources/providers/Microsoft.Network/loadBalancers/valtix-l-azure-injkczap/frontendIPConfigurations/valtix-l-azure-injkczap-fip"
