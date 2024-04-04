@@ -496,7 +496,7 @@ tags = {
 
 ## Attribute Reference
 * `id` - ID of the Gateway resource
-* `gateway_gwlb_endpoints` - (AWS, Azure) For AWS, this attribute includes the Gateway Load Balancer (GWLB) endpoints created in each of the AZs displayed in the format as follows:
+* `gateway_gwlb_endpoints` - (AWS, Azure) For AWS, this is represented as a list of maps, where each list entry is a AZ-specific endpoint, and each map are the attributes of the endpoint, including the AZ.  An example format is shown as follows:
 
     ```json
     "gateway_gwlb_endpoints": [
