@@ -514,7 +514,7 @@ tags = {
       }
     ]
     ```
-    For Azure, this attribute includes the Gateway Load Balancer Frontend IP resource path in the format as follows:
+    For Azure, this is represented as a single entry list of a map, where the map contains the attributes of the endpoint.  An example format is shown as follows:
 
     ```hcl
     "gateway_gwlb_endpoints": [
