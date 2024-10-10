@@ -4,7 +4,7 @@ Data source for obtaining attributes of an IP Security (IPSec) Profile resource.
 ## Example Usage
 ```hcl
 data "ciscomcd_profile_ipsec" "ipsec1" {
-  name = "ipsec1"
+	name = "ipsec1"
 }
 
 resource "ciscomcd_vpn_connections" "vpn_connections1" {

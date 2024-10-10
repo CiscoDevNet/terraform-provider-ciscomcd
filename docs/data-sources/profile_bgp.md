@@ -4,7 +4,7 @@ Data source for obtaining attributes of an BGP Profile resource.  The attributes
 ## Example Usage
 ```hcl
 data "ciscomcd_profile_bgp" "bgp1" {
-  name = "bgp1"
+	name = "bgp1"
 }
 
 resource "ciscomcd_gateway" "aws_gw1" {

@@ -8,8 +8,8 @@ data "ciscomcd_vpn_connection_set" "vpn_connection_set1" {
 }
 
 resource "ciscomcd_gateway" "aws_gw1" {
-	# Other arguments hidden for brevity
-	vpn_connection_set_id = data.ciscomcd_vpn_connection_set.vpn_connections1.id
+  # Other arguments hidden for brevity
+  vpn_connection_set_id = data.ciscomcd_vpn_connection_set.vpn_connections1.id
 }
 
 resource "ciscomcd_vpn_connections" "vpn_connections1" {
