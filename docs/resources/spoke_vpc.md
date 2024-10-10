@@ -29,16 +29,16 @@ resource "ciscomcd_spoke_vpc" "ciscomcd_spoke" {
 
 ### Azure Spoke VNet (Service VNet and Spoke VNet are in the same Azure Subscription)
 ```hcl
-resource "valtix_spoke_vpc" "valtix_spoke" {
-  service_vpc_id = valtix_service_vpc.service_vpc.id
+resource "ciscomcd_spoke_vpc" "ciscomcd_spoke" {
+  service_vpc_id = ciscomcd_service_vpc.service_vpc.id
   spoke_vpc_id   = "/subscriptions/subid/resourceGroups/rgname/providers/Microsoft.Network/virtualNetworks/spoke1"
 }
 ```
 
 ### Azure Spoke VNet (Service VNet and Spoke VNet are in the different Azure Subscriptions)
 ```hcl
-resource "valtix_spoke_vpc" "valtix_spoke" {
-  service_vpc_id             = valtix_service_vpc.service_vpc.id
+resource "ciscomcd_spoke_vpc" "ciscomcd_spoke" {
+  service_vpc_id             = ciscomcd_service_vpc.service_vpc.id
   spoke_vpc_id               = "/subscriptions/subid/resourceGroups/rgname/providers/Microsoft.Network/virtualNetworks/spoke1"
   spoke_vpc_csp_account_name = "azure-account-2"
 }
