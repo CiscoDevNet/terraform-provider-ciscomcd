@@ -226,7 +226,7 @@ default_url_filter {
 }
 ```
 
-Please check the Cisco Multicloud Defense UI (Policies -> Profiles -> URL Filtering) to obtain a list of predefined Talos Categories. A full list of Talos catogories is available at [Talos Intelligence Categories](https://www.talosintelligence.com/categories). A Talos URL loopup tool is available at [Talos Intelligence Search](https://www.talosintelligence.com/reputation_center).
+Please check the Cisco Multicloud Defense UI (Policies -> Profiles -> URL Filtering) to obtain a list of predefined Talos Categories. A full list of Talos catogories is available at [Talos Intelligence Categories](https://www.talosintelligence.com/categories). A Talos URL lookup tool is available at [Talos Intelligence Search](https://www.talosintelligence.com/reputation_center).
 
 ## Attribute Reference
 * `id` - ID of the URL Filter Profile resource that can be referenced in other resources (e.g., *ciscomcd_policy_rules*)
