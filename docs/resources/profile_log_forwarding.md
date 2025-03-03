@@ -79,7 +79,7 @@ resource "ciscomcd_profile_log_forwarding" "mssentinel" {
 
 ### Webhook
 ```hcl
-resource "valtix_profile_log_forwarding" "Webhook" {
+resource "ciscomcd_profile_log_forwarding" "Webhook" {
 	name = "Webhook"
 	destination = "WEBHOOK"
 	endpoint = "https://webhook.example.com"
