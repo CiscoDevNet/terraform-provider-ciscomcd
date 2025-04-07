@@ -490,7 +490,7 @@ settings {
   value = "3"
 }
 settings {
-  name = "controller.gateway.instance_creation_retry_reset_time"
+  name = "controller.gateway.instance_creation_retry_reset_timeout"
   value = "360"
 }
 ```
