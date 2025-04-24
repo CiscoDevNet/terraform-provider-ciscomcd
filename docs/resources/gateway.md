@@ -18,7 +18,7 @@ resource "ciscomcd_gateway" "aws_gw1" {
   description             = "AWS Gateway 1"
   csp_account_name        = ciscomcd_cloud_account.aws_act.name
   instance_type           = "AWS_M5_2XLARGE"
-  gateway_image           = "23.02-04"
+  gateway_image           = var.gateway_image
   gateway_state           = "ACTIVE"
   mode                    = "EDGE"
   security_type           = "INGRESS"
@@ -75,7 +75,7 @@ resource "ciscomcd_gateway" azure_gw1 {
   csp_account_name        = ciscomcd_cloud_account.azure_act.name
   instance_type           = "AZURE_D8S_V3"
   azure_resource_group    = "rg1"
-  gateway_image           = "23.02-04"
+  gateway_image           = var.gateway_image
   gateway_state           = "ACTIVE"
   mode                    = "EDGE"
   security_type           = "INGRESS"
@@ -129,7 +129,7 @@ resource "ciscomcd_gateway" "gcp_gw1" {
   description               = "GCP gateway"
   csp_account_name          = ciscomcd_cloud_account.gcp_act.name
   instance_type             = "GCP_E2_8"
-  gateway_image             = "23.02-04"
+  gateway_image             = var.gateway_image
   gateway_state             = "ACTIVE"
   mode                      = "EDGE"
   security_type             = "INGRESS"
@@ -221,6 +221,10 @@ For EDGE mode EGRESS Gateway set the `security_type = EGRESS`
             * **AWS_M5_2XLARGE** (8 core)
             * **AWS_M5_XLARGE** (4 core)
             * **AWS_M5_LARGE** (2 core)
+        * **M7i**
+            * **AWS_M7I_2XLARGE** (8 core)
+            * **AWS_M7I_XLARGE** (4 core)
+            * **AWS_M7I_LARGE** (2 core)
     * **Azure**
         * **DS_V3**
             * **AZURE_D8S_V3** (8 core)
