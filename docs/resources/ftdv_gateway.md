@@ -126,7 +126,7 @@ The EBS/Disk Encryption Gateway setting can use a Customer Managed Encryption Ke
 #### To deploy Gateway instances with no public IPs assigned to the interfaces
 ```hcl
 settings {
-  name = "controller.gateway.assign_public_ip"
+  name  = "controller.gateway.assign_public_ip"
   value = false
 }
 ```
@@ -134,11 +134,11 @@ settings {
 ### Gateway Instance Creation Retry Settings
 ```hcl
 settings {
-  name = "controller.gateway.instance_creation_retry_count"
+  name  = "controller.gateway.instance_creation_retry_count"
   value = "3"
 }
 settings {
-  name = "controller.gateway.instance_creation_retry_reset_timeout"
+  name  = "controller.gateway.instance_creation_retry_reset_timeout"
   value = "360"
 }
 ```
