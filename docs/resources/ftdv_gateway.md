@@ -83,9 +83,6 @@ security_type = ["INGRESS"]
 
 # Egress and east-west
 security_type = ["EGRESS", "EAST-WEST"]
-
-# Egress, east-west, and ingress
-security_type = ["EGRESS", "EAST-WEST", "INGRESS"]
 ```
 
 ## Argument Reference
@@ -95,7 +92,7 @@ security_type = ["EGRESS", "EAST-WEST", "INGRESS"]
 * `csp_account_name` - (Required) The CSP account where the Gateway will be deployed
 * `region` - (Required) Region where the Gateway will be deployed
 * `vpc_id` - (Required) VPC/VNet where the Gateway will be deployed. The value must refer to the `id` attribute of the [`ciscomcd_service_vpc`](/terraform/ciscomcd_service_vpc/#ciscomcd_service_vpc) resource.
-* `security_type` - (Optional) List of security types enabled on the FTDv Gateway. Applicable values are `INGRESS`, `EGRESS` and `EAST-WEST`.  Use `["INGRESS"]` for an ingress-only Gateway, `["EGRESS", "EAST-WEST"]` for egress/east-west traffic inspection, or include all three values when the target CSP deployment supports ingress, egress and east-west traffic on the same Gateway.  If not specified, the Gateway is deployed for egress traffic.
+* `security_type` - (Optional) List of security types enabled on the FTDv Gateway. Applicable values are `INGRESS`, `EGRESS` and `EAST-WEST`.  Use `["INGRESS"]` for an ingress-only Gateway, or `["EGRESS", "EAST-WEST"]` for egress/east-west traffic inspection.  If not specified, the Gateway is deployed for egress traffic.
 * `instance_type` - (Required) The instance type used when deploying the Gateway.  Applicable CSP-specific values are:
     * **AWS**
         * **C5**
